@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Film page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Film</ion-title>
+    <ion-buttons end>
+      <button (click)="enableActionSheet()" ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-img [src]="film?.poster"></ion-img>
+
+  <p> Title: {{film?.show_title}}</p>
+  <p> Summary: {{film?.summary}}</p>
+  <p> Release year: {{film?.release_year}}</p>
+  <p> Rating: {{film?.rating}}</p>
+  <p> Category: {{film?.category}}</p>
+  <p> Cast: {{film?.show_cast}}</p>
+  <p> Runtime: {{film?.runtime}}</p>
+
+</ion-content>

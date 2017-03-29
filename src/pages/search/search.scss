@@ -1,0 +1,15 @@
+page-search {
+ion-icon {
+    font-size: 200px;
+  }
+ ion-row {
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  ion-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 10px 5px;
+  }
+}

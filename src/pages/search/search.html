@@ -1,0 +1,51 @@
+<!--
+  Generated template for the Search page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search films</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar #searchField [placeholder]="searchPlaceholder" (ionInput)="onInput($event.target.value)">
+  </ion-searchbar>
+  <ion-item>
+    Estado de la red: {{network.type}}
+  </ion-item>
+  <div *ngIf="!films || !films.length">
+
+
+    <ion-row>
+      <ion-col>
+        <ion-icon name="search" color="primary"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col>
+        <p>Utiliza la barra del buscador para buscar tus películas</p>
+      </ion-col>
+
+    </ion-row>
+
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let f of films">
+      <ion-thumbnail item-left>
+        <img [src]="f.poster">
+      </ion-thumbnail>
+      <h2>{{f.show_title}}</h2>
+      <p>{{f.summary}}</p>
+      <button ion-button clear item-right (click)="goToFilm(f)">View!</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
